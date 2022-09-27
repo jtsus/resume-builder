@@ -1,6 +1,6 @@
 .app {
     min-height: 100vh;
-    background-color: antiquewhite;
+    background-color: blue;
     display: flex;
     flex-direction: row;
 }
