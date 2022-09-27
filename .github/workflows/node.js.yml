@@ -34,3 +34,14 @@ jobs:
       with:
         name: webapp
         path: build.zip
+  upload:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Download a single artifact
+      uses: actions/download-artifact@v3
+      with:
+        name: webapp
+    - name: Upload artifact over SSH
+      shell: bash
+      run: ./deploy.sh
+
