@@ -1,0 +1,129 @@
+.portfolio {
+    font-family: "Roboto";
+    font-weight: 300;
+}
+
+header {
+    padding: 44px 70px 25px;
+}
+
+.name {
+    color: #313c4e;
+    font-size: 60px;
+    font-weight: 500;
+}
+
+.title {
+    color: #696969;
+    font-size: 30px;
+}
+
+.info-line {
+    border-top: 1px solid #969994;
+    border-bottom: 1px solid #969994;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 50px;
+    background-color: #fdfdff;
+}
+
+.info {
+    font-size: 24px;
+}
+
+.section {
+    padding: 20px 70px 0;
+    color: #313c4e;
+    margin-bottom: 10px;
+}
+
+.section-header {
+    font-size: 40px;
+    font-weight: 500;
+    margin-bottom: 6px;
+}
+
+.spaced-line {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.skill-holder {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-left: 10px;
+    justify-content: space-between;
+}
+
+.skill:before {
+    content: "";
+    display: list-item;
+    position: absolute;
+    font-size: 20px;
+    margin-top: -5px;
+    margin-left: -10px;
+}
+
+.skill {
+    padding: 5px 10px 5px 20px;
+    font-weight: 400;
+    width: 160px;
+}
+
+.degree {
+    color: black;
+    font-size: 25px;
+    font-weight: 500;
+}
+
+.school {
+    font-size: 20px;
+    font-weight: 300;
+    margin-bottom: 5px;
+}
+
+.achievement:before {
+    content: "";
+    display: list-item;
+    position: absolute;
+    font-size: 20px;
+    margin-top: -5px;
+    margin-left: -10px;
+}
+
+.achievement {
+    margin-left: 30px;
+}
+
+.company {
+    color: black;
+    font-size: 25px;
+    font-weight: 500;
+}
+
+.position {
+    font-size: 20px;
+    font-weight: 300;
+    margin-bottom: 5px;
+}
+
+.action:before {
+    content: "";
+    display: list-item;
+    position: absolute;
+    font-size: 20px;
+    margin-top: -5px;
+    margin-left: -10px;
+}
+
+.action {
+    margin-left: 30px;
+}
+
+.duration {
+    color: black;
+}

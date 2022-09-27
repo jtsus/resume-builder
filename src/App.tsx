@@ -1,24 +1,74 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, {useState} from 'react';
+import './App.css'
+import Portfolio from "./Portfolio";
+import Editor from "./Editor";
+import {PortfolioData} from "./types";
+
+export let themes = ["Classic", "Simple"]
+
+let initial: PortfolioData = {
+    theme: themes[0],
+    name: "Justin Schreiber",
+    title: "Software Engineer",
+    info: [
+        {
+            type: "email",
+            content: "notmyemail@gmail.com"
+        },
+        {
+            type: "phone",
+            content: "(323) 507-5555"
+        },
+        {
+            type: "location",
+            content: "San Jose, CA"
+        }
+    ],
+    sections: [
+        {
+            title: "Skills",
+            type: "skill",
+            entries: [
+                "Java", "C#", "C",  "C++", "JavaScript", "Python", "OOP", "React", "Unity", "MongoDB"
+            ]
+        },
+        {
+            title: "Education",
+            type: "education",
+            entries: [
+                {
+                    degree: "Computer Engineering",
+                    school: "University of California, Santa Cruz",
+                    duration: "Expected 12/2023",
+                    achievements: [
+                        "GPA: 3.6"
+                    ]
+                }
+            ]
+        },
+        {
+            title: "Work Experience",
+            type: 'experience',
+            entries: [
+                {
+                    position: "Software Developer",
+                    company: "Tubnet Operations, LLC",
+                    duration: "03/2022 - Present",
+                    actions: [
+                        "Placed some blocks"
+                    ]
+                }
+            ]
+        }
+    ]
+}
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    const [data, setData] = useState(initial)
+    return (
+    <div className="app">
+        <Editor data={data} setData={setData}/>
+        <Portfolio data={data}/>
     </div>
   );
 }
