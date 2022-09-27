@@ -63,11 +63,19 @@ let initial: PortfolioData = {
     ]
 }
 
+let local = window.localStorage.getItem("portfolio-data")
+if (local) {
+    initial = JSON.parse(local)
+}
+
 function App() {
     const [data, setData] = useState(initial)
     return (
     <div className="app">
-        <Editor data={data} setData={setData}/>
+        <Editor data={data} setData={(newData: any) => {
+            window.localStorage.setItem("portfolio-data", JSON.stringify(newData))
+            setData(newData)
+        }}/>
         <Portfolio data={data}/>
     </div>
   );
