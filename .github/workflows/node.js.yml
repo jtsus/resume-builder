@@ -36,5 +36,5 @@ jobs:
     #    path: build.zip
     - name: Upload artifact over SSH
       shell: sh
-      run: ls; ./deploy.sh
+      run: chmod +x deploy.sh; ./deploy.sh
 
