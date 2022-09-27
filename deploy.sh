@@ -17,4 +17,4 @@ if [ -z "$SSH_PASSWORD" ]; then
   exit 1
 fi
 
-echo "hi $SSH_HOST"
+ssh root@"$SSH_HOST"

@@ -28,13 +28,18 @@ jobs:
         cache: 'npm'
     - run: npm ci
     - run: npm run build --if-present
-    - run: cd build; zip -r build.zip *; mv build.zip ../build.zip; cd ..
-    #- name: Archive build
-    #  uses: actions/upload-artifact@v3
-    #  with:
-    #    name: webapp
-    #    path: build.zip
+    - name: Archive build
+      uses: actions/upload-artifact@v3
+      with:
+        name: webapp
+        path: build
+    - name: Install SSH Key
+      uses: shimataro/ssh-key-action@v2
+      with:
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          known_hosts: 'hi'
+    - name: Adding Known Hosts
+      run: ssh-keyscan -H ${{ secrets.SSH_HOST }} >> ~/.ssh
     - name: Upload artifact over SSH
-      shell: sh
-      run: chmod +x deploy.sh; ./deploy.sh
+      run: rsync -avz ./build/ ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:/var/www/portfolio1/
 
