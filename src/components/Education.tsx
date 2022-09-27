@@ -1,5 +1,5 @@
 import React from "react";
-import {SchoolEntry, WorkEntry} from "../types";
+import {SchoolEntry} from "../types";
 
 const Education = ({content}: { content: SchoolEntry }) => (
     <div className="education">
