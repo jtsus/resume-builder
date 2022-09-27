@@ -29,19 +29,11 @@ jobs:
     - run: npm ci
     - run: npm run build --if-present
     - run: cd build; zip -r build.zip *; mv build.zip ../build.zip; cd ..
-    - name: Archive build
-      uses: actions/upload-artifact@v3
-      with:
-        name: webapp
-        path: build.zip
-  upload:
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-    - name: Download a single artifact
-      uses: actions/download-artifact@v3
-      with:
-        name: webapp
+    #- name: Archive build
+    #  uses: actions/upload-artifact@v3
+    #  with:
+    #    name: webapp
+    #    path: build.zip
     - name: Upload artifact over SSH
       shell: sh
       run: ls; ./deploy.sh
