@@ -1,9 +1,10 @@
 import React from "react";
 import Info from "./components/Info";
-import {PortfolioData, SchoolEntry, WorkEntry} from "./types";
+import {PortfolioData, ProjectEntry, SchoolEntry, WorkEntry} from "./types";
 import Skill from "./components/Skill";
 import Experience from "./components/Experience";
 import Education from "./components/Education";
+import Project from "./components/Project";
 
 const Portfolio = ({data}: {data: PortfolioData}) => {
     return <div className="portfolio">
@@ -21,7 +22,7 @@ const Portfolio = ({data}: {data: PortfolioData}) => {
         {data.sections && (
             <div>
                 {data.sections.map((section, i) =>
-                        <div className="section">
+                        <div key={i} className="section">
                             <div className="section-header">{section.title}</div>
                             {section.type === 'skill' &&
                                 <div className="skill-holder">
@@ -29,13 +30,18 @@ const Portfolio = ({data}: {data: PortfolioData}) => {
                                 </div>
                             }
                             {section.type === 'education' &&
-                                <div className="education-holder">
+                                <div>
                                     {section.entries.map((info, i) => <Education key={i} content={info as SchoolEntry}/>)}
                                 </div>
                             }
                             {section.type === 'experience' &&
-                                <div className="experience">
+                                <div>
                                     {section.entries.map((info, i) => <Experience key={i} content={info as WorkEntry}/>)}
+                                </div>
+                            }
+                            {section.type === 'project' &&
+                                <div>
+                                    {section.entries.map((info, i) => <Project key={i} content={info as ProjectEntry}/>)}
                                 </div>
                             }
                         </div>

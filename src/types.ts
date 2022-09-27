@@ -18,10 +18,17 @@ export interface WorkEntry {
     actions: string[]
 }
 
+export interface ProjectEntry {
+    name: string
+    description: string
+    link: string
+    actions: string[]
+}
+
 export interface Section {
     title: string
-    type: 'skill' | 'education' | 'experience'
-    entries: string[] | SchoolEntry[] | WorkEntry[]
+    type: 'skill' | 'education' | 'experience' | 'project'
+    entries: string[] | SchoolEntry[] | WorkEntry[] | ProjectEntry[]
 }
 
 export interface PortfolioData {

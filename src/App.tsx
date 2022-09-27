@@ -59,6 +59,20 @@ let initial: PortfolioData = {
                     ]
                 }
             ]
+        },
+        {
+            "title": "Projects",
+            "type": "project",
+            "entries": [
+                {
+                    "name": "Resume Builder",
+                    "description": "A json based resume builder made using React",
+                    "link": "http://www.justins.io/",
+                    "actions": [
+                        "Placed some blocks"
+                    ]
+                }
+            ]
         }
     ]
 }
