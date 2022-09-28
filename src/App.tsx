@@ -155,6 +155,19 @@ function exportToPDF() {
                 range.selectNode(node)
                 let pos = range.getBoundingClientRect();
 
+                // @ts-ignore
+                if (parent.origin) {
+                    pdf.link(
+                        (pos.left - resumeRect.left) * scale,
+                        (pos.top - resumeRect.top) * scale,
+                        (pos.width) * scale,
+                        (pos.height) * scale,
+                        {
+                            // @ts-ignore
+                            url: parent.origin
+                        }
+                    )
+                }
                 pdf.text(
                     text,
                     (pos.left - resumeRect.left) * scale,
@@ -165,6 +178,7 @@ function exportToPDF() {
                         maxWidth: (pos.width + 10) * scale
                     }
                 )
+
             }
         } else if (node instanceof Element) {
             console.log(node)
