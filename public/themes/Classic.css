@@ -1,5 +1,5 @@
-.portfolio {
-    font-family: "Roboto";
+.resume {
+    font-family: "Arial";
     font-weight: 300;
 }
 
@@ -34,9 +34,8 @@ header {
 }
 
 .section {
-    padding: 20px 70px 0;
+    padding: 10px 70px 0;
     color: #313c4e;
-    margin-bottom: 10px;
 }
 
 .section-header {
@@ -59,18 +58,15 @@ header {
     justify-content: space-between;
 }
 
-.skill:before {
-    content: "";
-    display: list-item;
+.bullet {
     position: absolute;
-    font-size: 20px;
-    margin-top: -5px;
-    margin-left: -10px;
+    margin-left: -20px;
 }
 
 .skill {
     padding: 5px 10px 5px 20px;
     font-weight: 400;
+    font-size: 18px;
     width: 160px;
 }
 
@@ -86,17 +82,12 @@ header {
     margin-bottom: 5px;
 }
 
-.achievement:before {
-    content: "";
-    display: list-item;
-    position: absolute;
-    font-size: 20px;
-    margin-top: -5px;
-    margin-left: -10px;
-}
-
 .achievement {
     margin-left: 30px;
+}
+
+.experience {
+    margin-bottom: 20px;
 }
 
 .company {
@@ -111,19 +102,14 @@ header {
     margin-bottom: 5px;
 }
 
-.action:before {
-    content: "";
-    display: list-item;
-    position: absolute;
-    font-size: 20px;
-    margin-top: -5px;
-    margin-left: -10px;
-}
-
 .action {
     margin-left: 30px;
+    font-size: 17px;
+    margin-bottom: 5px;
 }
 
 .duration {
     color: black;
+    font-size: 18px;
+    font-weight: 300;
 }

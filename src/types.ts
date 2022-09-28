@@ -8,7 +8,7 @@ export interface SchoolEntry {
     school: string
     degree: string
     duration: string
-    achievements: string[]
+    achievements?: string[]
 }
 
 export interface WorkEntry {

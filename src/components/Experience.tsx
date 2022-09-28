@@ -3,12 +3,14 @@ import {WorkEntry} from "../types";
 
 const Experience = ({content}: { content: WorkEntry }) => (
     <div className="experience">
-        <div className="company">{content.company}</div>
         <div className="spaced-line">
-            <div className="position">{content.position}</div>
+            <div className="company">{content.company}</div>
             <div className="duration">{content.duration}</div>
         </div>
-        {content.actions.map((action, i) => <div className="action" key={i}>{action}</div>)}
+        <div className="position">{content.position}</div>
+        {content.actions.map((action, i) =>
+            <div className="action" key={i}><div className="bullet">•</div>{action}</div>
+        )}
     </div>
 )
 

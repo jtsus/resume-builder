@@ -5,10 +5,13 @@
     flex-direction: row;
 }
 
-.portfolio {
-    margin: 5vh auto;
+.resume {
     width: 1152px;
     height: 1629px;
     background-color: white;
+}
+
+.resume-holder {
+    margin: 5vh auto;
     box-shadow: 30px 30px 0 #313c4e;
 }
