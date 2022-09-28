@@ -6,9 +6,9 @@ import { highlight, languages } from 'prismjs/components/prism-core';
 import 'prismjs/components/prism-json';
 import 'prismjs/components/prism-clike';
 import 'prismjs/components/prism-markup';
-import {PortfolioData} from "./types";
+import {PortfolioData} from "../types";
 import './Editor.css'
-import parse from "./validate";
+import parse from "../validate";
 
 const Editor = ({data, setData}: {data: PortfolioData, setData: any}) => {
     const [input, setInput] = useState(JSON.stringify(data, null, 2))

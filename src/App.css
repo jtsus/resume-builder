@@ -1,17 +1,60 @@
 .app {
-    min-height: 100vh;
     background-color: antiquewhite;
     display: flex;
     flex-direction: row;
+}
+
+.action-bar {
+    right: 0;
+    width: 250px;
+    height: 35px;
+    background-color: #313c4e;
+    position: absolute;
+    border-bottom-left-radius: 20px;
+    border-bottom: 2px solid black;
+    border-left: 2px solid black;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: space-around;
+}
+
+a {
+    color: white;
+    text-underline: none;
+    text-decoration: none;
+}
+
+.icon-button {
+    font-size: 25px;
+}
+
+.icon-button:hover {
+    color: gray;
+}
+
+button {
+    font-family: Roboto;
+    border: none;
+    height: 25px;
+    border-radius: 7px;
+    background-color: white;
+    padding: 0 10px;
+
+}
+
+button:hover {
+    cursor: pointer;
+    box-shadow: 2px 1px 0 lightgray;
 }
 
 .resume {
     width: 1152px;
     height: 1629px;
     background-color: white;
+    box-shadow: 30px 30px 0 #313c4e;
 }
 
 .resume-holder {
-    margin: 5vh auto;
-    box-shadow: 30px 30px 0 #313c4e;
+    margin-top: 50px;
 }

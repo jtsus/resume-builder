@@ -1,11 +1,12 @@
 import React, {useState} from 'react';
 import './App.css'
-import Editor from "./Editor";
+import Editor from "./components/Editor";
 import Resume from "./Resume";
 import {PortfolioData} from "./types";
 // @ts-ignore
 import { jsPDF } from "jspdf";
 import ErrorBoundary from "./components/ErrorBoundary";
+import { AiFillGithub } from 'react-icons/ai'
 
 export let themes = ["Classic", "Simple"]
 
@@ -231,6 +232,7 @@ function App() {
     <div className="app">
         <div className="action-bar">
             <button onClick={exportToPDF}>Export</button>
+            <a className="icon-button" href="https://github.com/JustinSamaKun/resume-builder">GitHub <AiFillGithub /></a>
         </div>
         <Editor data={data} setData={(newData: any) => {
             window.localStorage.setItem("portfolio-data", JSON.stringify(newData))
