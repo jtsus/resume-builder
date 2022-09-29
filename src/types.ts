@@ -31,7 +31,7 @@ export interface Section {
     entries: string[] | SchoolEntry[] | WorkEntry[] | ProjectEntry[]
 }
 
-export interface PortfolioData {
+export interface ResumeData {
     theme: string
     name: string
     title: string

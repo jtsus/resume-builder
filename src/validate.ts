@@ -1,8 +1,8 @@
-import {PortfolioData} from "./types";
+import {ResumeData} from "./types";
 
 export default function parse(json: string) {
     try {
-        let parsed = JSON.parse(json) as PortfolioData;
+        let parsed = JSON.parse(json) as ResumeData;
         if (parsed.sections) {
             for (let i = 0; i < parsed.sections.length; i++){
                 let section = parsed.sections[i];

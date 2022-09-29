@@ -6,11 +6,11 @@ import { highlight, languages } from 'prismjs/components/prism-core';
 import 'prismjs/components/prism-json';
 import 'prismjs/components/prism-clike';
 import 'prismjs/components/prism-markup';
-import {PortfolioData} from "../types";
+import {ResumeData} from "../types";
 import './Editor.css'
 import parse from "../validate";
 
-const Editor = ({data, setData}: {data: PortfolioData, setData: any}) => {
+const Editor = ({data, setData}: {data: ResumeData, setData: any}) => {
     const [input, setInput] = useState(JSON.stringify(data, null, 2))
     return <div className="editor">
         <link href="./prism.css" rel="stylesheet" />
