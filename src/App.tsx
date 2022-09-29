@@ -12,12 +12,12 @@ export let themes = ["Classic", "Simple"]
 
 let initial: PortfolioData = {
     "theme": "Classic",
-    "name": "First Last",
+    "name": "Justin Schreiber",
     "title": "Software Engineer",
     "info": [
         {
             "type": "email",
-            "content": "notmyemail@gmail.com"
+            "content": "justintschreiber@gmail.com"
         },
         {
             "type": "phone",
@@ -25,7 +25,11 @@ let initial: PortfolioData = {
         },
         {
             "type": "location",
-            "content": "San Jose, CA"
+            "content": "Santa Cruz, CA"
+        },
+        {
+            "type": "website",
+            "content": "http://www.justins.io/"
         }
     ],
     "sections": [
