@@ -53,11 +53,16 @@ header {
 }
 
 .skill-holder {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    margin-left: 10px;
-    justify-content: space-between;
+    display: grid;
+    gap: 5px;
+    grid-template-columns: repeat(auto-fit, minmax(180px, max-content));
+    margin-left: -10px;
+}
+
+.skill {
+    font-weight: 400;
+    font-size: 18px;
+    padding-left: 40px;
 }
 
 .bullet {
@@ -67,13 +72,6 @@ header {
     width: 6px;
     height: 6px;
     margin-top: 6px;
-}
-
-.skill {
-    padding: 5px 10px 5px 20px;
-    font-weight: 400;
-    font-size: 18px;
-    width: 160px;
 }
 
 .degree {
