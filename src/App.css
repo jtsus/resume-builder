@@ -21,12 +21,12 @@
 
 a {
     color: white;
-    text-underline: none;
     text-decoration: none;
 }
 
 .icon-button {
     font-size: 25px;
+    text-decoration: none;
 }
 
 .icon-button:hover {

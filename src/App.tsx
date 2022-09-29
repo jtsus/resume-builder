@@ -132,7 +132,7 @@ function exportToPDF() {
     let pdf = new jsPDF({
         unit: 'pt'
     })
-    let scale = 0.5163
+    let scale = 0.5166
     let nodes: Array<Node> = [element]
     let range = document.createRange()
     range.selectNode(element)
@@ -182,42 +182,46 @@ function exportToPDF() {
 
             }
         } else if (node instanceof Element) {
-            console.log(node)
             let style = window.getComputedStyle(node, null)
             let color = style.getPropertyValue("background-color")
             let pos = node.getBoundingClientRect()
             if (color !== "rgba(0, 0, 0, 0)") {
+                pdf.setFillColor(color)
                 pdf.setDrawColor(color)
                 pdf.rect(
                     (pos.left - resumeRect.left) * scale,
                     (pos.top - resumeRect.top) * scale,
-                    pos.width * 0.5165,
-                    pos.height * 0.5165,
-                    'S'
+                    pos.width * scale,
+                    pos.height * scale,
+                    'F'
                 )
             }
             let border = style.getPropertyValue("border-top")
             let args = [...border.split(' ', 2)]
             args.push(border.substring(border.indexOf(' ', border.indexOf(args[1])) + 1))
             if (args[1] !== 'none') {
+                pdf.setFillColor(args[2])
                 pdf.setDrawColor(args[2])
                 pdf.line(
                     (pos.left - resumeRect.left) * scale,
                     (pos.top - resumeRect.top) * scale,
                     (pos.right - resumeRect.left) * scale,
-                    (pos.top - resumeRect.top) * scale
+                    (pos.top - resumeRect.top) * scale,
+                    'FD'
                 )
             }
             border = style.getPropertyValue("border-bottom")
             args = [...border.split(' ', 2)]
             args.push(border.substring(border.indexOf(' ', border.indexOf(args[1])) + 1))
             if (args[1] !== 'none') {
+                pdf.setFillColor(args[2])
                 pdf.setDrawColor(args[2])
                 pdf.line(
                     (pos.left - resumeRect.left) * scale,
                     (pos.bottom - resumeRect.top) * scale,
                     (pos.right - resumeRect.left) * scale,
-                    (pos.bottom - resumeRect.top) * scale
+                    (pos.bottom - resumeRect.top) * scale,
+                    'FD'
                 )
             }
         }

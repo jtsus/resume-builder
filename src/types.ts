@@ -1,6 +1,6 @@
 
 export interface InfoEntry {
-    type: 'email' | 'phone' | 'location'
+    type: 'email' | 'phone' | 'location' | 'website'
     content: string
 }
 
