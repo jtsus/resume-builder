@@ -11,50 +11,14 @@ export function exportToPDF() {
     let range = document.createRange()
     range.selectNode(element)
     let resumeRect = range.getBoundingClientRect();
+    let textNodes = []
     for (let i = 0; i < nodes.length; i++) {
         let node = nodes[i]
         for (let i = 0; i < node.childNodes.length; i++) {
             nodes.push(node.childNodes[i])
         }
         if (node.nodeName === "#text") {
-            // @ts-ignore
-            let text = node.textContent
-            let parent = node.parentElement
-            if (parent && text) {
-                let style = window.getComputedStyle(parent, null)
-                pdf.setTextColor(style.getPropertyValue("color"))
-                //pdf.setFont(style.getPropertyValue("font-family"), style.getPropertyValue("font-style"))
-                let size = parseFloat(style.getPropertyValue("font-size").replace("px", ""))
-                pdf.setFontSize(size * scale)
-                let range = document.createRange()
-                range.selectNode(node)
-                let pos = range.getBoundingClientRect();
-
-                // @ts-ignore
-                if (parent.origin) {
-                    pdf.link(
-                        (pos.left - resumeRect.left) * scale,
-                        (pos.top - resumeRect.top) * scale,
-                        (pos.width) * scale,
-                        (pos.height) * scale,
-                        {
-                            // @ts-ignore
-                            url: parent.origin
-                        }
-                    )
-                }
-                pdf.text(
-                    text,
-                    (pos.left - resumeRect.left) * scale,
-                    (pos.top - resumeRect.top) * scale,
-                    {
-                        baseline: 'top',
-                        //renderingMode: 'invisible'
-                        maxWidth: (pos.width + 10) * scale
-                    }
-                )
-
-            }
+            textNodes.push(node)
         } else if (node instanceof Element) {
             let style = window.getComputedStyle(node, null)
             let color = style.getPropertyValue("background-color")
@@ -98,6 +62,64 @@ export function exportToPDF() {
                     'FD'
                 )
             }
+        }
+    }
+    // Sort text elements left to right then top to bottom for better parsing
+    textNodes.sort((left, right) => {
+        let range = document.createRange()
+        range.selectNode(left)
+        let posLeft = range.getBoundingClientRect();
+        range = document.createRange()
+        range.selectNode(right)
+        let posRight = range.getBoundingClientRect();
+        return posLeft.left - posRight.left
+    })
+    textNodes.sort((left, right) => {
+        let range = document.createRange()
+        range.selectNode(left)
+        let posLeft = range.getBoundingClientRect();
+        range = document.createRange()
+        range.selectNode(right)
+        let posRight = range.getBoundingClientRect();
+        return posLeft.top - posRight.top
+    })
+    for (let node of textNodes) {
+        let text = node.textContent
+        let parent = node.parentElement
+        if (parent && text) {
+            let style = window.getComputedStyle(parent, null)
+            pdf.setTextColor(style.getPropertyValue("color"))
+            //pdf.setFont(style.getPropertyValue("font-family"), style.getPropertyValue("font-style"))
+            let size = parseFloat(style.getPropertyValue("font-size").replace("px", ""))
+            pdf.setFontSize(size * scale)
+            let range = document.createRange()
+            range.selectNode(node)
+            let pos = range.getBoundingClientRect();
+
+            // @ts-ignore
+            if (parent.origin) {
+                pdf.link(
+                    (pos.left - resumeRect.left) * scale,
+                    (pos.top - resumeRect.top) * scale,
+                    (pos.width) * scale,
+                    (pos.height) * scale,
+                    {
+                        // @ts-ignore
+                        url: parent.origin
+                    }
+                )
+            }
+            pdf.text(
+                text,
+                (pos.left - resumeRect.left) * scale,
+                (pos.top - resumeRect.top) * scale,
+                {
+                    baseline: 'top',
+                    //renderingMode: 'invisible'
+                    maxWidth: (pos.width + 10) * scale
+                }
+            )
+
         }
     }
     console.log(pdf)

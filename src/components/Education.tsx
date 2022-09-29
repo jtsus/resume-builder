@@ -9,7 +9,7 @@ const Education = ({content}: { content: SchoolEntry }) => (
         </div>
         <div className="school">{content.school}</div>
         {content.achievements?.map((action, i) =>
-            <div className="achievement" key={i}><div className="bullet">•</div>{action}</div>
+            <div className="achievement" key={i}><div className="bullet" />{action}</div>
         )}
     </div>
 )

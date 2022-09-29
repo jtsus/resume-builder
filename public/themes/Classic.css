@@ -4,7 +4,7 @@
 }
 
 header {
-    padding: 44px 70px 25px;
+    padding: 60px 50px 25px 60px;
 }
 
 .name {
@@ -43,6 +43,7 @@ header {
     font-size: 40px;
     font-weight: 500;
     margin-bottom: 6px;
+    margin-left: -10px;
 }
 
 .spaced-line {
@@ -62,6 +63,10 @@ header {
 .bullet {
     position: absolute;
     margin-left: -20px;
+    background-color: black;
+    width: 6px;
+    height: 6px;
+    margin-top: 6px;
 }
 
 .skill {
@@ -91,13 +96,13 @@ header {
     margin-bottom: 20px;
 }
 
-.company {
+.position {
     color: black;
     font-size: 25px;
     font-weight: 500;
 }
 
-.position {
+.company {
     font-size: 20px;
     font-weight: 300;
     margin-bottom: 5px;
