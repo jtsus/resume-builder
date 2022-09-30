@@ -137,7 +137,7 @@ let initial: ResumeData = {
     ]
 }
 
-let local = window.localStorage.getItem("resume-data")
+let local = window.localStorage.getItem("resume_data")
 if (local) {
     initial = JSON.parse(local)
 }
@@ -151,7 +151,7 @@ function App() {
             <a className="icon-button" href="https://github.com/JustinSamaKun/resume-builder">GitHub <AiFillGithub /></a>
         </div>
         <Editor data={data} setData={(newData: any) => {
-            window.localStorage.setItem("resume-data", JSON.stringify(newData))
+            window.localStorage.setItem("resume_data", JSON.stringify(newData))
             setData(newData)
         }}/>
         <div className="resume-holder">
