@@ -20,15 +20,11 @@ let initial: ResumeData = {
         },
         {
             "type": "phone",
-            "content": "(323) 507-5115"
+            "content": "(323) 507-5126"
         },
         {
             "type": "location",
             "content": "Santa Cruz, CA"
-        },
-        {
-            "type": "website",
-            "content": "http://www.justins.io/"
         }
     ],
     "sections": [
@@ -39,7 +35,7 @@ let initial: ResumeData = {
                 {
                     "degree": "Computer Engineering",
                     "school": "University of California, Santa Cruz",
-                    "duration": "Jun 2020 – Dec 2023"
+                    "duration": "Sep 2020 – Jun 2024"
                 }
             ]
         },
@@ -48,43 +44,34 @@ let initial: ResumeData = {
             "type": "experience",
             "entries": [
                 {
-                    "position": "Senior Software Engineer",
-                    "company": "Growthsi",
-                    "duration": "Jun 2018 – Present",
+                    "position": "Software Developer",
+                    "company": "TubNet",
+                    "duration": "Mar 2022 – Present",
                     "actions": [
-                        "Supervised and managed the team of 8 peers in the development of a robust upgrade for a client’s existing software application, resulting in 35% incremental revenue in 9 months.",
-                        "Mentored and solved complex technological issues for a variety of assigned projects, achieving over 97% customer satisfaction rate.",
-                        "Created a team of 20+ peers to launch over 10 e-commerce sites for a variety of assigned projects, integrating Stripe, PayPal, Authorize.net and other payment APIs."
+                        "Led the application development team to launch while ensuring adherence to the highest level of quality standards to meet project requirements.",
+                        "Mentored and solved complex technological issues in 3 different projects in the organization.",
+                        "Architected and optimized systems to increase scalability and user experience by over 170% for 3 projects in the organization."
+                    ]
+                },
+                {
+                    "position": "CEO",
+                    "company": "KIP Dev",
+                    "duration": "Jul 2018 – Present",
+                    "actions": [
+                        "Architected and implemented a scalable architecture for the game to handle 1,000s of concurrent players across 6 interconnected servers.",
+                        "Designed the application to exceed the current quality standards of all competitors and launched within 3 months.",
+                        "Marketed the application through 8 channels to grow the user base by 30% month over month while building the brand name.",
+                        "Recruited and supervised a remote team of 20 individuals across 5 time zones while maintaining high productivity throughout the team."
                     ]
                 },
                 {
                     "position": "Lead Software Engineer",
-                    "company": "Resume Worded",
-                    "duration": "Jan 2015 – May 2018",
+                    "company": "Mythic Games",
+                    "duration": "Apr 2021 – Feb 2022",
                     "actions": [
-                        "Led the application development team to successfully launch the application on time with 6+ constraints, while ensuring adherence to the highest level of quality standards and meeting customer requirements.",
-                        "Determined areas of improvements by regularly monitoring existing business systems, boosting business efficiency by at least 10 to 25% every year through automation of repetitive tasks.",
-                        "Documented all supported systems and applications to streamline existing business procedures, effectively training new team members and reducing on-boarding time by 34%."
-                    ]
-                },
-                {
-                    "position": "Software Engineer",
-                    "company": "Tubnet Operations, LLC",
-                    "duration": "May 2010 – Dec 2014",
-                    "actions": [
-                        "Participated in sales presentations due to ability to translate user needs into usable software solutions, assisting the sales team in closing 3 deals generating $200K+ in revenue.",
-                        "Provided designing and programming support in enhancement of web applications accessed by over 3 million users worldwide.",
-                        "Awarded ‘Employee of the Year’ twice in a row, due to earning highest customer satisfaction rate for all software solutions delivered.",
-                        "Promoted within 18 months due to strong performance and organizational impact (one year ahead of schedule)."
-                    ]
-                },
-                {
-                    "position": "Junior Software Engineer",
-                    "company": "Ikara Software, LTD",
-                    "duration": "May 2010 – Dec 2014",
-                    "actions": [
-                        "Participated in coding activities, maintaining integrity of program logic and coding and developing and updating existing systems to increase task success rate by 15%.",
-                        "Worked with senior technology solutions team members to assist with development of over 12+ software solutions in web, desktop and mobile platforms."
+                        "Led the development and architecture of a ground breaking application and managed to launch in a time frame of 6 months.",
+                        "Onboarded and trained 2 software engineers and leveraged Asana and YouTrack to streamline the workflow between the team.",
+                        "Improved the player data handler while taking a priority to data safety by implementing ACID transactions with MongoDB, fixed  data loss issues and caused an increased to player retention by 70%."
                     ]
                 }
             ]
@@ -99,8 +86,29 @@ let initial: ResumeData = {
                     "link": "http://www.justins.io/",
                     "actions": [
                         "Created the application using Typescript and React and leveraged PrismJS to create the JSON editor.",
-                        "Implemented a custom HTML to PDF processor to optimize for ATS using JSPDF without exporting the page to JPG.",
-                        "Developed a GitHub automation to build and upload the application over SSH using Rsync to increase productivity."
+                        "Developed a custom HTML to PDF processor to optimize for ATS using JSPDF without exporting the page to JPG.",
+                        "Implemented a GitHub automation to build and upload the application over SSH using Rsync to increase productivity."
+                    ]
+                },
+                {
+                    "name": "NovelRock",
+                    "description": "Mobile app for novel reading",
+                    "link": "http://www.justins.io/NovelRock.mp4",
+                    "actions": [
+                        "Incorporated Typescript and React Native to develop the application while using Redux for state management.",
+                        "Developed a REST API in Spring with 13 different endpoints to handle user data and supply novel content to the front end.",
+                        "Created a web scraper with Java to add 1000+ publicly available unlicensed novels and check for any updates to the library."
+                    ]
+                },
+                {
+                    "name": "QuestsPlus",
+                    "description": "Web app for quest creation",
+                    "link": "http://www.questsplus.com/",
+                    "actions": [
+                        "Coded the application in JavaScript with React as the front end and used Node with Express for the backend.",
+                        "Integrated PayPal API to allow users to use the application on a monthly subscription basis with a free trial which increased revenue by 130%.",
+                        "Engineered a Minecraft integration with the WebApp to increase customer base by 70%.",
+                        "Designed quest logic to use a node based architecture to allow for the highest level of usability."
                     ]
                 }
             ]
@@ -115,10 +123,15 @@ let initial: ResumeData = {
                 "C++",
                 "JavaScript",
                 "Python",
-                "OOP",
+                "MongoDB",
+                "MySQL",
                 "React",
+                "React Native",
                 "Unity",
-                "MongoDB"
+                "CI/CD",
+                "Kubernetes",
+                "Docker",
+                "NodeJS"
             ]
         }
     ]

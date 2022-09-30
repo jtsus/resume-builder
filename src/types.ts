@@ -21,7 +21,7 @@ export interface WorkEntry {
 export interface ProjectEntry {
     name: string
     description: string
-    link: string
+    link?: string
     actions: string[]
 }
 

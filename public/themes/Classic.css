@@ -35,14 +35,13 @@ header {
 }
 
 .section {
-    padding: 10px 70px 7px;
+    padding: 10px 70px 0;
     color: #313c4e;
 }
 
 .section-header {
     font-size: 40px;
     font-weight: 500;
-    margin-bottom: 6px;
     margin-left: -10px;
 }
 
@@ -50,6 +49,15 @@ header {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
+}
+
+.project {
+    margin-top: 9px;
+}
+
+.experience {
+    margin-top: 9px;
 }
 
 .skill-holder {
@@ -57,6 +65,7 @@ header {
     gap: 5px;
     grid-template-columns: repeat(auto-fit, minmax(180px, max-content));
     margin-left: -10px;
+    margin-top: 7px;
 }
 
 .skill {
@@ -71,7 +80,7 @@ header {
     background-color: black;
     width: 6px;
     height: 6px;
-    margin-top: 6px;
+    margin-top: 7px;
 }
 
 .degree {
@@ -86,14 +95,6 @@ header {
     margin-bottom: 5px;
 }
 
-.achievement {
-    margin-left: 30px;
-}
-
-.experience {
-    margin-bottom: 20px;
-}
-
 .position {
     color: black;
     font-size: 25px;
@@ -103,13 +104,12 @@ header {
 .company {
     font-size: 20px;
     font-weight: 300;
-    margin-bottom: 5px;
 }
 
 .action {
     margin-left: 30px;
     font-size: 17px;
-    margin-bottom: 5px;
+    margin-top: 4px;
 }
 
 .duration {
