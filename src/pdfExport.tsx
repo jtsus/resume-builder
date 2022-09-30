@@ -87,6 +87,8 @@ export function exportToPDF() {
         let text = node.textContent
         let parent = node.parentElement
         if (parent && text) {
+            text = text.trim()
+            if (text.length === 0) continue
             let style = window.getComputedStyle(parent, null)
             pdf.setTextColor(style.getPropertyValue("color"))
             //pdf.setFont(style.getPropertyValue("font-family"), style.getPropertyValue("font-style"))
