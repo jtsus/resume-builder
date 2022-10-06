@@ -107,7 +107,7 @@ export function exportToPDF() {
                     (pos.height) * scale,
                     {
                         // @ts-ignore
-                        url: parent.origin
+                        url: parent.href
                     }
                 )
             }
