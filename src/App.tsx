@@ -53,8 +53,8 @@ let initial: ResumeData = {
                     "duration": "Mar 2022 – Present",
                     "actions": [
                         "Led the application development team to launch while ensuring adherence to the highest level of quality standards.",
-                        "Mentored and solved complex technological issues across 3 different projects in the organization.",
-                        "Architected and optimized systems to increase scalability and user experience by over 170%."
+                        "Architected the software design patterns used to ensure the creation of robust code through Services, Singletons and PubSub.",
+                        "Solved complex technological issues across the organization using my experience with vector math and algorithms."
                     ]
                 },
                 {
@@ -62,8 +62,8 @@ let initial: ResumeData = {
                     "company": "KIP Dev",
                     "duration": "Jul 2018 – Jun 2022",
                     "actions": [
-                        "Architected and implemented a scalable architecture for the application to handle 1,000s of concurrent players across 6 interconnected servers.",
-                        "Configured the infrastructure for the application to auto scale using MaaS, Kubernetes and HAProxy.",
+                        "Architected and implemented a scalable architecture for the application to handle 1,000s of concurrent players using MaaS, Kubernetes and HAProxy.",
+                        "Utilized MongoDB,  MySQL and TimescaleDB to handle the application's user, global and leaderboard data, respectively.",
                         "Wrote CI/CD to improve productivity and allow for automatic deployments of updates with minimum impact to user experience."
                     ]
                 },
@@ -73,8 +73,8 @@ let initial: ResumeData = {
                     "duration": "Apr 2021 – Feb 2022",
                     "actions": [
                         "Led the development and architecture of a ground breaking application and managed to launch in a time frame of 6 months.",
-                        "Onboarded and trained 2 software engineers and introduced Asana and YouTrack to streamline the workflow between the team.",
-                        "Improved the player data handler by leveraging ACID transactions and atomic updates with MongoDB to fix data loss issues and caused an increase to player retention by 70%."
+                        "Improved the player data handler by leveraging ACID transactions and atomic updates with MongoDB to fix data loss issues and caused an increase to player retention by 70%.",
+                        "Created GLSL shaders and added client side OpenGL code to create depth aware cel shading and stenciling to allow for cinematic cutscenes."
                     ]
                 }
             ]
