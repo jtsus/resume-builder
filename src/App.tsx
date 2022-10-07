@@ -25,6 +25,10 @@ let initial: ResumeData = {
         {
             "type": "location",
             "content": "Santa Cruz, CA"
+        },
+        {
+            "type": "website",
+            "content": "https://github.com/JustinSamaKun"
         }
     ],
     "sections": [
@@ -48,30 +52,29 @@ let initial: ResumeData = {
                     "company": "TubNet",
                     "duration": "Mar 2022 – Present",
                     "actions": [
-                        "Led the application development team to launch while ensuring adherence to the highest level of quality standards to meet project requirements.",
+                        "Led the application development team to launch while ensuring adherence to the highest level of quality standards.",
                         "Mentored and solved complex technological issues across 3 different projects in the organization.",
                         "Architected and optimized systems to increase scalability and user experience by over 170%."
                     ]
                 },
                 {
-                    "position": "CEO",
+                    "position": "Software Engineer",
                     "company": "KIP Dev",
-                    "duration": "Jul 2018 – Present",
+                    "duration": "Jul 2018 – Jun 2022",
                     "actions": [
                         "Architected and implemented a scalable architecture for the application to handle 1,000s of concurrent players across 6 interconnected servers.",
-                        "Designed the application to exceed the current quality standards of all competitors and launched within 3 months.",
-                        "Marketed the application through 8 channels to grow the user base by 30% month over month while building the brand name.",
-                        "Recruited and supervised a remote team of 20 individuals across 5 time zones to maintain high productivity throughout the team."
+                        "Configured the infrastructure for the application to auto scale using MaaS, Kubernetes and HAProxy.",
+                        "Wrote CI/CD to improve productivity and allow for automatic deployments of updates with minimum impact to user experience."
                     ]
                 },
                 {
-                    "position": "Lead Software Engineer",
+                    "position": "Software Engineer",
                     "company": "Mythic Games",
                     "duration": "Apr 2021 – Feb 2022",
                     "actions": [
                         "Led the development and architecture of a ground breaking application and managed to launch in a time frame of 6 months.",
                         "Onboarded and trained 2 software engineers and introduced Asana and YouTrack to streamline the workflow between the team.",
-                        "Improved the player data handler by leveraging ACID transactions with MongoDB which fixed data loss issues and caused an increase to player retention by 70%."
+                        "Improved the player data handler by leveraging ACID transactions and atomic updates with MongoDB to fix data loss issues and caused an increase to player retention by 70%."
                     ]
                 }
             ]
