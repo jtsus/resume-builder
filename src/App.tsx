@@ -11,24 +11,24 @@ export let themes = ["Classic", "Simple"]
 
 let initial: ResumeData = {
     "theme": "Classic",
-    "name": "Justin Schreiber",
+    "name": "John Doe",
     "title": "Software Engineer",
     "info": [
         {
             "type": "email",
-            "content": "justintschreiber@gmail.com"
+            "content": "--"
         },
         {
             "type": "phone",
-            "content": "(323) 507-5126"
+            "content": "--"
         },
         {
             "type": "location",
-            "content": "Santa Cruz, CA"
+            "content": "--"
         },
         {
             "type": "website",
-            "content": "https://github.com/JustinSamaKun"
+            "content": "https://github.com/--"
         }
     ],
     "sections": [
@@ -38,7 +38,7 @@ let initial: ResumeData = {
             "entries": [
                 {
                     "degree": "Computer Engineering",
-                    "school": "University of California, Santa Cruz",
+                    "school": "University of California, Los Angeles",
                     "duration": "Sep 2020 – Jun 2024"
                 }
             ]
@@ -49,32 +49,12 @@ let initial: ResumeData = {
             "entries": [
                 {
                     "position": "Software Developer",
-                    "company": "TubNet",
-                    "duration": "Mar 2022 – Present",
+                    "company": "Google",
+                    "duration": "Mar 2021 – Present",
                     "actions": [
                         "Led the application development team to launch while ensuring adherence to the highest level of quality standards.",
                         "Architected the software design patterns used to ensure the creation of robust code through Services, Singletons and PubSub.",
                         "Solved complex technological issues across the organization using my experience with vector math and algorithms."
-                    ]
-                },
-                {
-                    "position": "Software Engineer",
-                    "company": "KIP Dev",
-                    "duration": "Jul 2018 – Jun 2022",
-                    "actions": [
-                        "Architected and implemented a scalable architecture for the application to handle 1,000s of concurrent players using MaaS, Kubernetes and HAProxy.",
-                        "Utilized MongoDB,  MySQL and TimescaleDB to handle the application's user, global and leaderboard data, respectively.",
-                        "Wrote CI/CD to improve productivity and allow for automatic deployments of updates with minimum impact to user experience."
-                    ]
-                },
-                {
-                    "position": "Software Engineer",
-                    "company": "Mythic Games",
-                    "duration": "Apr 2021 – Feb 2022",
-                    "actions": [
-                        "Led the development and architecture of a ground breaking application and managed to launch in a time frame of 6 months.",
-                        "Improved the player data handler by leveraging ACID transactions and atomic updates with MongoDB to fix data loss issues and caused an increase to player retention by 70%.",
-                        "Created GLSL shaders and added client side OpenGL code to create depth aware cel shading and stenciling to allow for cinematic cutscenes."
                     ]
                 }
             ]
@@ -91,27 +71,6 @@ let initial: ResumeData = {
                         "Created the application using Typescript and React and leveraged PrismJS to create the JSON editor.",
                         "Developed a custom HTML to PDF processor to optimize for ATS using JSPDF without exporting the page to JPG.",
                         "Implemented a GitHub automation to build and upload the application over SSH using Rsync to increase productivity."
-                    ]
-                },
-                {
-                    "name": "NovelRock",
-                    "description": "Mobile app for novel reading",
-                    "link": "http://www.justins.io/NovelRock.mp4",
-                    "actions": [
-                        "Incorporated Typescript and React Native to develop the application while using Redux for state management.",
-                        "Developed a REST API in Spring with 13 different endpoints to handle user data and supply novel content to the front end.",
-                        "Created a web scraper with Java to add 1000+ publicly available unlicensed novels and check for any updates to the library."
-                    ]
-                },
-                {
-                    "name": "QuestsPlus",
-                    "description": "Web app for quest creation",
-                    "link": "http://www.questsplus.com/",
-                    "actions": [
-                        "Coded the application in JavaScript with React as the front end and used Node with Express for the backend.",
-                        "Integrated PayPal API to allow users to use the application on a monthly subscription basis with a free trial which increased revenue by 130%.",
-                        "Engineered a Minecraft integration with the WebApp to increase customer base by 70%.",
-                        "Designed quest logic to use a node based architecture to allow for the highest level of usability."
                     ]
                 }
             ]
