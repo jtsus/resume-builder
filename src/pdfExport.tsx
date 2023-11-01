@@ -4,9 +4,11 @@ export function exportToPDF() {
     let element = document.getElementById('resume')
     if (!element) return
     let pdf = new jsPDF({
-        unit: 'pt'
+        unit: 'pt',
+        orientation: 'p',
+        format: 'letter'
     })
-    let scale = 0.5166
+    let scale = 0.487
     let nodes: Array<Node> = [element]
     let range = document.createRange()
     range.selectNode(element)
@@ -35,32 +37,40 @@ export function exportToPDF() {
                 )
             }
             let border = style.getPropertyValue("border-top")
-            let args = [...border.split(' ', 2)]
-            args.push(border.substring(border.indexOf(' ', border.indexOf(args[1])) + 1))
-            if (args[1] !== 'none') {
-                pdf.setFillColor(args[2])
-                pdf.setDrawColor(args[2])
-                pdf.line(
-                    (pos.left - resumeRect.left) * scale,
-                    (pos.top - resumeRect.top) * scale,
-                    (pos.right - resumeRect.left) * scale,
-                    (pos.top - resumeRect.top) * scale,
-                    'FD'
-                )
+            try {
+                let args = [...border.split(' ', 2)]
+                args.push(border.substring(border.indexOf(' ', border.indexOf(args[1])) + 1))
+                if (args[1] !== 'none') {
+                    pdf.setFillColor(args[2])
+                    pdf.setDrawColor(args[2])
+                    pdf.line(
+                        (pos.left - resumeRect.left) * scale,
+                        (pos.top - resumeRect.top) * scale,
+                        (pos.right - resumeRect.left) * scale,
+                        (pos.top - resumeRect.top) * scale,
+                        'FD'
+                    )
+                }
+            } catch (e) {
+                console.error('border-top:' + border, e)
             }
             border = style.getPropertyValue("border-bottom")
-            args = [...border.split(' ', 2)]
-            args.push(border.substring(border.indexOf(' ', border.indexOf(args[1])) + 1))
-            if (args[1] !== 'none') {
-                pdf.setFillColor(args[2])
-                pdf.setDrawColor(args[2])
-                pdf.line(
-                    (pos.left - resumeRect.left) * scale,
-                    (pos.bottom - resumeRect.top) * scale,
-                    (pos.right - resumeRect.left) * scale,
-                    (pos.bottom - resumeRect.top) * scale,
-                    'FD'
-                )
+            try {
+                let args = [...border.split(' ', 2)]
+                args.push(border.substring(border.indexOf(' ', border.indexOf(args[1])) + 1))
+                if (args[1] !== 'none') {
+                    pdf.setFillColor(args[2])
+                    pdf.setDrawColor(args[2])
+                    pdf.line(
+                        (pos.left - resumeRect.left) * scale,
+                        (pos.bottom - resumeRect.top) * scale,
+                        (pos.right - resumeRect.left) * scale,
+                        (pos.bottom - resumeRect.top) * scale,
+                        'FD'
+                    )
+                }
+            } catch (e) {
+                console.error('border-bottom:' + border, e)
             }
         }
     }
@@ -94,6 +104,12 @@ export function exportToPDF() {
             //pdf.setFont(style.getPropertyValue("font-family"), style.getPropertyValue("font-style"))
             let size = parseFloat(style.getPropertyValue("font-size").replace("px", ""))
             pdf.setFontSize(size * scale)
+            const bold = parseInt(style.getPropertyValue("font-weight")) > 500
+            const italic = parent.nodeName === 'EM'
+            console.log(parent.nodeName)
+            const font = pdf.getFont()
+            if (italic) pdf.setFont(font.fontName, 'italic')
+            if (bold) pdf.setFont(font.fontName, font.fontStyle, 'bold')
             let range = document.createRange()
             range.selectNode(node)
             let pos = range.getBoundingClientRect();
@@ -121,7 +137,8 @@ export function exportToPDF() {
                     maxWidth: (pos.width + 10) * scale
                 }
             )
-
+            if (italic) pdf.setFont(font.fontName, font.fontStyle)
+            if (bold) pdf.setFont(font.fontName,  font.fontStyle, 'normal')
         }
     }
     console.log(pdf)

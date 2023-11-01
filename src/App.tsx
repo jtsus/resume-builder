@@ -50,6 +50,7 @@ let initial: ResumeData = {
                 {
                     "position": "Software Developer",
                     "company": "Google",
+                    "location": "Palo Alto",
                     "duration": "Mar 2021 – Present",
                     "actions": [
                         "Led the application development team to launch while ensuring adherence to the highest level of quality standards.",

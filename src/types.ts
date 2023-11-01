@@ -8,13 +8,17 @@ export interface SchoolEntry {
     school: string
     degree: string
     duration: string
+    grade?: string
     achievements?: string[]
 }
 
 export interface WorkEntry {
     company: string
+    link?: string
     position: string
+    location: string
     duration: string
+    description?: string
     actions: string[]
 }
 
@@ -34,7 +38,7 @@ export interface Section {
 export interface ResumeData {
     theme: string
     name: string
-    title: string
+    title?: string
     website?: string
     info: InfoEntry[]
     sections?: Section[]

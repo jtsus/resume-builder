@@ -4,18 +4,21 @@
 }
 
 header {
-    padding: 60px 50px 25px 60px;
+    padding: 40px 60px 20px 60px;
+    width: 100%;
 }
 
 .name {
-    color: #313c4e;
-    font-size: 60px;
+    color: black;
+    font-size: 56px;
     font-weight: 500;
+    text-align: left;
 }
 
 .title {
-    color: #696969;
-    font-size: 30px;
+    color: black;
+    font-weight: 300;
+    font-size: 28px;
 }
 
 .info-line {
@@ -23,26 +26,29 @@ header {
     border-bottom: 1px solid #969994;
     margin-bottom: 20px;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
     height: 50px;
     background-color: #fcfcff;
+    padding: 0 60px;
 }
 
 .info {
-    font-size: 24px;
+    font-size: 22px;
     color: black;
 }
 
 .section {
     padding: 10px 70px 0;
-    color: #313c4e;
 }
 
 .section-header {
-    font-size: 40px;
+    font-size: 35px;
     font-weight: 500;
     margin-left: -10px;
+    margin-bottom: 15px;
+    border-bottom: 2px solid black;
+    padding-bottom: 1px;
 }
 
 .spaced-line {
@@ -53,11 +59,15 @@ header {
 }
 
 .project {
-    margin-top: 9px;
+    margin: 15px 0;
 }
 
 .experience {
-    margin-top: 9px;
+    margin: 15px 0;
+}
+
+.education {
+    margin: 15px 0;
 }
 
 .skill-holder {
@@ -65,7 +75,7 @@ header {
     gap: 5px;
     grid-template-columns: repeat(auto-fit, minmax(180px, max-content));
     margin-left: -10px;
-    margin-top: 7px;
+    margin-top: 15px;
 }
 
 .skill {
@@ -95,25 +105,39 @@ header {
     margin-bottom: 5px;
 }
 
-.position {
-    color: black;
-    font-size: 25px;
-    font-weight: 500;
+.header {
+    font-size: 23px;
+    font-weight: 600;
 }
 
-.company {
-    font-size: 20px;
+.subheader {
+    color: black;
+    font-size: 22px;
     font-weight: 300;
 }
 
+.description {
+    font-size: 21px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    margin-left: 20px;
+    color: black;
+}
+
 .action {
-    margin-left: 30px;
-    font-size: 17px;
-    margin-top: 4px;
+    font-size: 20px;
+    margin-left: 40px;
+    margin-top: 5px;
 }
 
 .duration {
     color: black;
-    font-size: 18px;
+    font-size: 20px;
     font-weight: 300;
+}
+
+.location {
+    color: black;
+    font-size: 20px;
+    font-weight: 600;
 }
