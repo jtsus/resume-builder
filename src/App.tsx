@@ -110,7 +110,7 @@ function App() {
     return (
     <div className="app">
         <div className="action-bar">
-            <button onClick={exportToPDF}>Export</button>
+            <button onClick={() => exportToPDF(`${data.name.replace(' ', '_')}_resume.pdf`)}>Export</button>
             <a className="icon-button" href="https://github.com/JustinSamaKun/resume-builder">GitHub <AiFillGithub /></a>
         </div>
         <Editor data={data} setData={(newData: any) => {

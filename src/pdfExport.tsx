@@ -1,6 +1,6 @@
 import {jsPDF} from "jspdf";
 
-export function exportToPDF() {
+export function exportToPDF(name: string) {
     let element = document.getElementById('resume')
     if (!element) return
     let pdf = new jsPDF({
@@ -141,6 +141,5 @@ export function exportToPDF() {
             if (bold) pdf.setFont(font.fontName,  font.fontStyle, 'normal')
         }
     }
-    console.log(pdf)
-    pdf.save('resume.pdf')
+    pdf.save(name)
 }
