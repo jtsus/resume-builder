@@ -6,7 +6,6 @@ import {ResumeData} from "./types";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { AiFillGithub } from 'react-icons/ai'
 import { exportToPDF } from "./pdfExport";
-
 export let themes = ["Classic", "Simple"]
 
 let initial: ResumeData = {

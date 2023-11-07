@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import Info from "./components/Info";
 import {ResumeData, ProjectEntry, SchoolEntry, WorkEntry} from "./types";
 import Skill from "./components/Skill";
@@ -7,7 +7,6 @@ import Education from "./components/Education";
 import Project from "./components/Project";
 
 const Resume = ({data}: {data: ResumeData}) => {
-    console.log(data.title)
     return <div id="resume" className="resume">
         <link rel="stylesheet" type="text/css" href={`./themes/${data.theme}.css`} />
         <div className="spaced-line">

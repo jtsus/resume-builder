@@ -28,13 +28,22 @@ export function exportToPDF(name: string) {
             if (color !== "rgba(0, 0, 0, 0)") {
                 pdf.setFillColor(color)
                 pdf.setDrawColor(color)
-                pdf.rect(
-                    (pos.left - resumeRect.left) * scale,
-                    (pos.top - resumeRect.top) * scale,
-                    pos.width * scale,
-                    pos.height * scale,
-                    'F'
-                )
+                if (style.getPropertyValue('border-radius') === '100%') {
+                    pdf.circle(
+                        (pos.left - resumeRect.left + pos.width/2) * scale,
+                        (pos.top - resumeRect.top + pos.width/2) * scale,
+                        (pos.width/2) * scale,
+                        'F'
+                    )
+                } else {
+                    pdf.rect(
+                        (pos.left - resumeRect.left) * scale,
+                        (pos.top - resumeRect.top) * scale,
+                        pos.width * scale,
+                        pos.height * scale,
+                        'F'
+                    )
+                }
             }
             let border = style.getPropertyValue("border-top")
             try {
@@ -43,6 +52,8 @@ export function exportToPDF(name: string) {
                 if (args[1] !== 'none') {
                     pdf.setFillColor(args[2])
                     pdf.setDrawColor(args[2])
+                    const size = parseFloat(args[0].replaceAll(/[^0-9.]/g, ''))
+                    pdf.setLineWidth(size / 2)
                     pdf.line(
                         (pos.left - resumeRect.left) * scale,
                         (pos.top - resumeRect.top) * scale,
@@ -61,10 +72,32 @@ export function exportToPDF(name: string) {
                 if (args[1] !== 'none') {
                     pdf.setFillColor(args[2])
                     pdf.setDrawColor(args[2])
+                    const size = parseFloat(args[0].replaceAll(/[^0-9.]/g, ''))
+                    pdf.setLineWidth(size / 2)
                     pdf.line(
                         (pos.left - resumeRect.left) * scale,
                         (pos.bottom - resumeRect.top) * scale,
                         (pos.right - resumeRect.left) * scale,
+                        (pos.bottom - resumeRect.top) * scale,
+                        'FD'
+                    )
+                }
+            } catch (e) {
+                console.error('border-bottom:' + border, e)
+            }
+            border = style.getPropertyValue("border-left")
+            try {
+                let args = [...border.split(' ', 2)]
+                args.push(border.substring(border.indexOf(' ', border.indexOf(args[1])) + 1))
+                if (args[1] !== 'none') {
+                    pdf.setFillColor(args[2])
+                    pdf.setDrawColor(args[2])
+                    const size = parseFloat(args[0].replaceAll(/[^0-9.]/g, ''))
+                    pdf.setLineWidth(size / 2)
+                    pdf.line(
+                        (pos.left - resumeRect.left) * scale,
+                        (pos.top - resumeRect.top) * scale,
+                        (pos.left - resumeRect.left) * scale,
                         (pos.bottom - resumeRect.top) * scale,
                         'FD'
                     )
@@ -142,4 +175,20 @@ export function exportToPDF(name: string) {
         }
     }
     pdf.save(name)
+}
+
+function drawBorder(pdf: jsPDF, border: string, pos: DOMRect, resumeRect: DOMRect, scale: number) {
+    let args = [...border.split(' ', 2)]
+    args.push(border.substring(border.indexOf(' ', border.indexOf(args[1])) + 1))
+    if (args[1] !== 'none') {
+        pdf.setFillColor(args[2])
+        pdf.setDrawColor(args[2])
+        pdf.line(
+            (pos.left - resumeRect.left) * scale,
+            (pos.bottom - resumeRect.top) * scale,
+            (pos.right - resumeRect.left) * scale,
+            (pos.bottom - resumeRect.top) * scale,
+            'FD'
+        )
+    }
 }
