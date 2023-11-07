@@ -1,60 +1,147 @@
-.portfolio {
-    font-family: "Times New Roman", sans-serif;
+.resume {
+    font-family: "Arial";
+    font-weight: 300;
 }
 
 header {
-    padding: 44px 50px 0;
+    padding: 40px 0 10px 0;
     width: 100%;
 }
 
 .name {
     color: black;
-    font-size: 50px;
+    font-size: 56px;
+    font-weight: 600;
     text-align: center;
 }
 
 .title {
-    display: none;
+    color: black;
+    font-weight: 300;
+    font-size: 28px;
 }
 
 .info-line {
-    border-bottom: 2px solid #000;
     margin-bottom: 20px;
     display: flex;
     justify-content: center;
+    gap: 10px;
     align-items: center;
-    height: 40px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .info {
-    font-size: 24px;
-    padding: 0 10px;
+    font-size: 22px;
+    color: black;
+    padding-left: 10px;
+    border-left: solid 2px black;
+}
+.info:first-child {
+    border-left: none;
 }
 
 .section {
-    padding: 20px 50px 0;
-    color: black;
-    margin-bottom: 10px;
+    padding: 10px 70px 0;
 }
 
 .section-header {
+    font-size: 35px;
     font-weight: 600;
-    font-size: 20px;
-    margin-bottom: 10px;
+    margin-left: -10px;
+    margin-bottom: 15px;
+    border-bottom: 3px solid black;
+    padding-bottom: 10px;
+}
+
+.spaced-line {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.project {
+    margin: 15px 0;
+}
+
+.experience {
+    margin: 15px 0;
+}
+
+.education {
+    margin: 15px 0;
 }
 
 .skill-holder {
-    margin-left: 50px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    flex-wrap: wrap;
+    display: grid;
+    gap: 5px;
+    grid-template-columns: repeat(auto-fit, minmax(180px, max-content));
+    margin-left: -10px;
+    margin-top: 15px;
 }
 
 .skill {
-    display: list-item;
-    min-width: 200px;
-    font-weight: 100;
-    margin-left: 20px;
-    margin-right: 8px;
+    font-weight: 400;
+    font-size: 18px;
+    padding-left: 40px;
+}
+
+.bullet {
+    position: absolute;
+    margin-left: -20px;
+    background-color: black;
+    width: 6px;
+    height: 6px;
+    margin-top: 7px;
+    border-radius: 100%;
+}
+
+.degree {
+    color: black;
+    font-size: 25px;
+    font-weight: 500;
+}
+
+.school {
+    font-size: 20px;
+    font-weight: 300;
+    margin-bottom: 5px;
+}
+
+.header {
+    font-size: 23px;
+    font-weight: 600;
+}
+
+.subheader {
+    color: black;
+    font-size: 22px;
+    font-weight: 300;
+}
+
+.description {
+    font-size: 21px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    margin-left: 10px;
+    color: black;
+}
+
+.action {
+    font-size: 20px;
+    margin-left: 30px;
+    margin-top: 5px;
+}
+
+.duration {
+    color: black;
+    font-size: 20px;
+    font-weight: 300;
+}
+
+.location {
+    color: black;
+    font-size: 20px;
+    font-weight: 600;
 }
