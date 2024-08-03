@@ -29,10 +29,15 @@ export interface ProjectEntry {
     actions: string[]
 }
 
+export type SkillsEntry = {
+    label: string,
+    entries: Array<string>
+}
+
 export interface Section {
     title: string
     type: 'skill' | 'education' | 'experience' | 'project'
-    entries: string[] | SchoolEntry[] | WorkEntry[] | ProjectEntry[]
+    entries: SkillsEntry[] | string[] | SchoolEntry[] | WorkEntry[] | ProjectEntry[]
 }
 
 export interface ResumeData {
@@ -43,3 +48,4 @@ export interface ResumeData {
     info: InfoEntry[]
     sections?: Section[]
 }
+
