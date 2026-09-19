@@ -18,11 +18,11 @@ const Field = ({onChange = jest.fn(), onEnter, onDeleteEmpty, value = "Hello"}: 
     />
 )
 
-test("marks the field as spell-checkable and contenteditable", () => {
+test("marks the field as contenteditable without native spellcheck", () => {
     render(<Field />)
     const field = screen.getByTestId("field")
     expect(field).toHaveAttribute("contenteditable", "true")
-    expect(field).toHaveAttribute("spellcheck", "true")
+    expect(field).toHaveAttribute("spellcheck", "false")
 })
 
 test("enter on a field does not insert a newline and notifies the parent", () => {
