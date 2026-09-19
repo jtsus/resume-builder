@@ -1,6 +1,6 @@
 .resume {
-    font-family: "Inter", sans-serif;
-    font-weight: 400;
+    font-family: "Arial";
+    font-weight: 300;
 }
 
 header {
@@ -17,7 +17,7 @@ header {
 
 .title {
     color: black;
-    font-weight: 400;
+    font-weight: 300;
     font-size: 28px;
     text-align: center;
 }
@@ -106,7 +106,7 @@ header {
 
 .school {
     font-size: 20px;
-    font-weight: 400;
+    font-weight: 300;
     margin-bottom: 5px;
 }
 
@@ -118,7 +118,7 @@ header {
 .subheader {
     color: black;
     font-size: 22px;
-    font-weight: 400;
+    font-weight: 300;
 }
 
 .description {
@@ -138,7 +138,7 @@ header {
 .duration {
     color: black;
     font-size: 20px;
-    font-weight: 400;
+    font-weight: 300;
 }
 
 .location {
