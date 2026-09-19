@@ -23,7 +23,7 @@ const Resume = ({data, onChange}: { data: ResumeData, onChange: (data: ResumeDat
         patch({sections})
     }
 
-    return <div id="resume" className="resume" lang="en" spellCheck>
+    return <div id="resume" className="resume" lang="en" spellCheck={false}>
         <div className="spaced-line">
             <header>
                 <Editable className="name" value={data.name} onChange={(name) => patch({name})}/>

@@ -107,7 +107,7 @@ const Editable = ({
             target={tag === "a" ? target : undefined}
             contentEditable
             suppressContentEditableWarning
-            spellCheck
+            spellCheck={false}
             lang="en"
             data-testid={testId}
             onFocus={() => {
