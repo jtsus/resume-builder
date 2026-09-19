@@ -114,6 +114,11 @@ if (local) {
     initial = JSON.parse(local)
 }
 
+function persist(newData: ResumeData, setData: (data: ResumeData) => void) {
+    window.localStorage.setItem("resume_data", JSON.stringify(newData))
+    setData(newData)
+}
+
 function App() {
     const [data, setData] = useState(initial)
     return (
@@ -122,13 +127,10 @@ function App() {
             <button onClick={() => exportToPDF(`${data.name.replace(' ', '_')}_resume.pdf`)}>Export</button>
             <a className="icon-button" href="https://github.com/JustinSamaKun/resume-builder">GitHub <AiFillGithub /></a>
         </div>
-        <Editor data={data} setData={(newData: any) => {
-            window.localStorage.setItem("resume_data", JSON.stringify(newData))
-            setData(newData)
-        }}/>
+        <Editor data={data} setData={(newData: ResumeData) => persist(newData, setData)}/>
         <div className="resume-holder">
             <ErrorBoundary>
-                <Resume data={data}/>
+                <Resume data={data} onChange={(newData) => persist(newData, setData)}/>
             </ErrorBoundary>
         </div>
     </div>

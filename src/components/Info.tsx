@@ -1,15 +1,23 @@
 import React from "react";
 import {InfoEntry} from "../types";
+import Editable from "./Editable";
 
-
-const Info = ({entry}: { entry: InfoEntry }) => {
+const Info = ({entry, onChange}: { entry: InfoEntry, onChange: (entry: InfoEntry) => void }) => {
     if (entry.type === 'website') {
-        return <a className="info" href={(!entry.content.startsWith('http') ? 'https://' : '') + entry.content}>{entry.content}</a>
+        const href = (!entry.content.startsWith('http') ? 'https://' : '') + entry.content
+        return <Editable
+            tag="a"
+            className="info"
+            href={href}
+            value={entry.content}
+            onChange={(content) => onChange({...entry, content})}
+        />
     }
-    //if (entry.type === 'email') {
-    //    return <a className="info" href={`mailto:${entry.content}`}>{entry.content}</a>
-    //}
-    return <div className="info">{entry.content}</div>
+    return <Editable
+        className="info"
+        value={entry.content}
+        onChange={(content) => onChange({...entry, content})}
+    />
 }
 
-export default Info;
+export default Info

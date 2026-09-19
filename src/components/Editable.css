@@ -1,0 +1,4 @@
+/* Keep editing chrome off the page so preview matches export/print. */
+#resume [contenteditable="true"] {
+    outline: none;
+}
