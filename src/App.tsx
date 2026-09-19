@@ -9,7 +9,7 @@ import { exportToPDF } from "./pdfExport";
 export let themes = ["Classic", "Simple"]
 
 let initial: ResumeData = {
-    "theme": "Classic",
+    "theme": "Simple",
     "name": "John Doe",
     "title": "Software Engineer",
     "info": [
@@ -79,21 +79,31 @@ let initial: ResumeData = {
             "title": "Skills",
             "type": "skill",
             "entries": [
-                "Java",
-                "C#",
-                "C",
-                "C++",
-                "JavaScript",
-                "Python",
-                "MongoDB",
-                "MySQL",
-                "React",
-                "React Native",
-                "Unity",
-                "CI/CD",
-                "Kubernetes",
-                "Docker",
-                "NodeJS"
+                {
+                    "label": "Languages",
+                    "entries": [
+                        "Java", 
+                        "C#",
+                        "C",
+                        "C++",
+                        "JavaScript",
+                    ]
+                },
+                {
+                    "label": "Databases",
+                    "entries": [
+                        "Python",
+                        "MongoDB",
+                        "MySQL",
+                        "React",
+                        "React Native",
+                        "Unity",
+                        "CI/CD",
+                        "Kubernetes",
+                        "Docker",
+                        "NodeJS"
+                    ]
+                }
             ]
         }
     ]

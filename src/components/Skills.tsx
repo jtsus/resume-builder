@@ -7,7 +7,6 @@ interface Props {
 }
 
 const Skills = ({ content }: Props) => {
-    console.log(content);
     return (
         <div className="skill-entry-holder">
             {content.entries?.map((entry) =>

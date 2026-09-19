@@ -1,4 +1,10 @@
 import {jsPDF} from "jspdf";
+import "./Inter-italic.js";
+import "./Inter-normal.js";
+import "./Inter-bold.js";
+//import "./Roboto-italic.js";
+//import "./Roboto-normal.js";
+//import "./Roboto-bold.js";
 
 export function exportToPDF(name: string) {
     let element = document.getElementById('resume')
@@ -8,7 +14,10 @@ export function exportToPDF(name: string) {
         orientation: 'p',
         format: 'letter'
     })
+    pdf.setFont('Inter', 'normal');
+
     let scale = 0.487
+
     let nodes: Array<Node> = [element]
     let range = document.createRange()
     range.selectNode(element)
@@ -93,11 +102,11 @@ export function exportToPDF(name: string) {
                     pdf.setFillColor(args[2])
                     pdf.setDrawColor(args[2])
                     const size = parseFloat(args[0].replaceAll(/[^0-9.]/g, ''))
-                    pdf.setLineWidth(size / 2)
+                    pdf.setLineWidth(size * scale)
                     pdf.line(
-                        (pos.left - resumeRect.left) * scale,
+                        (pos.left - resumeRect.left) * scale + 2,
                         (pos.top - resumeRect.top) * scale,
-                        (pos.left - resumeRect.left) * scale,
+                        (pos.left - resumeRect.left) * scale + 2,
                         (pos.bottom - resumeRect.top) * scale,
                         'FD'
                     )
@@ -137,12 +146,10 @@ export function exportToPDF(name: string) {
             //pdf.setFont(style.getPropertyValue("font-family"), style.getPropertyValue("font-style"))
             let size = parseFloat(style.getPropertyValue("font-size").replace("px", ""))
             pdf.setFontSize(size * scale)
-            const bold = parseInt(style.getPropertyValue("font-weight")) > 500
             const italic = parent.nodeName === 'EM'
-            console.log(parent.nodeName)
             const font = pdf.getFont()
             if (italic) pdf.setFont(font.fontName, 'italic')
-            if (bold) pdf.setFont(font.fontName, font.fontStyle, 'bold')
+            else pdf.setFont(font.fontName, parseInt(style.getPropertyValue("font-weight")) > 500 ? 'bold' : 'normal')
             let range = document.createRange()
             range.selectNode(node)
             let pos = range.getBoundingClientRect();
@@ -167,11 +174,9 @@ export function exportToPDF(name: string) {
                 {
                     baseline: 'top',
                     //renderingMode: 'invisible'
-                    maxWidth: (pos.width + 10) * scale
+                    maxWidth: 538
                 }
             )
-            if (italic) pdf.setFont(font.fontName, font.fontStyle)
-            if (bold) pdf.setFont(font.fontName,  font.fontStyle, 'normal')
         }
     }
     pdf.save(name)

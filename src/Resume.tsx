@@ -13,7 +13,7 @@ const Resume = ({ data }: { data: ResumeData }) => {
         <div className="spaced-line">
             <header>
                 <div className="name">{data.name}</div>
-                {data.title && <em className="title">{data.title}</em>}
+                {data.title && <div className="title">{data.title}</div>}
             </header>
             {data.website && <a target={"_blank"} href={data.website}>{data.website}</a>}
         </div>
