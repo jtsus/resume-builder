@@ -27,7 +27,7 @@ const Resume = ({data, onChange}: { data: ResumeData, onChange: (data: ResumeDat
             <header>
                 <Editable className="name" value={data.name} onChange={(name) => patch({name})}/>
                 {data.title &&
-                    <Editable className="title" value={data.title} onChange={(title) => patch({title})}/>}
+                    <Editable tag="em" className="title" value={data.title} onChange={(title) => patch({title})}/>}
             </header>
             {data.website &&
                 <Editable tag="a" target="_blank" href={data.website} value={data.website}
