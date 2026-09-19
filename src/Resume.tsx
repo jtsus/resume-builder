@@ -6,6 +6,7 @@ import Education from "./components/Education";
 import Project from "./components/Project";
 import Skills from "./components/Skills";
 import Editable from "./components/Editable";
+import SpellMarks from "./components/SpellMarks";
 import "./components/Editable.css";
 
 const Resume = ({data, onChange}: { data: ResumeData, onChange: (data: ResumeData) => void }) => {
@@ -86,6 +87,7 @@ const Resume = ({data, onChange}: { data: ResumeData, onChange: (data: ResumeDat
                 )}
             </div>
         )}
+        <SpellMarks revision={data}/>
     </div>
 }
 
