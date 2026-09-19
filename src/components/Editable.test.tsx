@@ -28,7 +28,7 @@ test("marks the field as spell-checkable and contenteditable", () => {
 test("enter on a field does not insert a newline and notifies the parent", () => {
     const onEnter = jest.fn()
     render(<Field onEnter={onEnter} />)
-    fireEvent.keyDown(screen.getByTestId("field"), {key: "Enter"})
+    fireEvent.keyDown(screen.getByTestId("field"), {key: "Enter", keyCode: 13})
     expect(onEnter).toHaveBeenCalledTimes(1)
 })
 

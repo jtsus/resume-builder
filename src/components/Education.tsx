@@ -14,8 +14,10 @@ const Education = ({content, onChange}: { content: SchoolEntry, onChange: (conte
         <div className="education">
             <div className="spaced-line">
                 <Editable className="header" value={content.school}
+                          onEnter={addFirstAchievement}
                           onChange={(school) => onChange({...content, school})}/>
                 <Editable className="location" value={content.duration}
+                          onEnter={addFirstAchievement}
                           onChange={(duration) => onChange({...content, duration})}/>
             </div>
             <div className="spaced-line">
@@ -28,7 +30,7 @@ const Education = ({content, onChange}: { content: SchoolEntry, onChange: (conte
             {content.achievements &&
                 <BulletList
                     items={content.achievements}
-                    itemClassName="achievement"
+                    itemClassName="action"
                     onChange={(achievements) => onChange({
                         ...content,
                         achievements: achievements.length ? achievements : undefined

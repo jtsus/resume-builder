@@ -2,3 +2,10 @@
 #resume [contenteditable="true"] {
     outline: none;
 }
+
+/* Empty inline fields collapse; give a caret target only while focused. */
+#resume span[contenteditable="true"]:focus {
+    display: inline-block;
+    min-width: 0.75em;
+    vertical-align: baseline;
+}

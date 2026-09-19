@@ -14,7 +14,9 @@ const BulletList = ({
 }) => {
     const keySeed = useRef(0)
     const [keys, setKeys] = useState(() => items.map(() => keySeed.current++))
-    const [focusKey, setFocusKey] = useState<number | undefined>(undefined)
+    const [focusKey, setFocusKey] = useState<number | undefined>(() =>
+        items.length === 1 && items[0] === "" ? keys[0] : undefined
+    )
 
     return (
         <>
