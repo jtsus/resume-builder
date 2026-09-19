@@ -13,14 +13,14 @@ const Project = ({content, onChange}: { content: ProjectEntry, onChange: (conten
     return (
         <div className="project">
             <div className="spaced-line">
-                <Editable className="subheader" value={content.name} onEnter={addFirstBullet}
+                <Editable className="position" value={content.name} onEnter={addFirstBullet}
                           onChange={(name) => onChange({...content, name})}/>
                 {content.link &&
                     <Editable tag="a" className="duration" href={content.link} value={content.link}
                               onChange={(link) => onChange({...content, link})}/>}
             </div>
             {content.description &&
-                <Editable className="description" value={content.description} onEnter={addFirstBullet}
+                <Editable className="company" value={content.description} onEnter={addFirstBullet}
                           onChange={(description) => onChange({...content, description})}/>}
             <BulletList
                 items={content.actions}

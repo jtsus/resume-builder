@@ -1,6 +1,6 @@
 .resume {
-    font-family: "Inter", sans-serif;
-    font-weight: 400;
+    font-family: "Arial";
+    font-weight: 300;
 }
 
 header {
@@ -17,7 +17,7 @@ header {
 
 .title {
     color: black;
-    font-weight: 400;
+    font-weight: 300;
     font-size: 28px;
     text-align: center;
 }
@@ -38,6 +38,7 @@ header {
     padding-left: 10px;
     border-left: solid 2px black;
 }
+
 .info:first-child {
     border-left: none;
 }
@@ -63,7 +64,7 @@ header {
 }
 
 .project {
-    margin: 10px 0;
+    margin: 15px 0;
 }
 
 .experience {
@@ -82,11 +83,7 @@ header {
     margin-top: 15px;
 }
 
-.skill {
-    font-weight: 400;
-    font-size: 18px;
-    padding-left: 40px;
-}
+
 .skill-entry-holder {
     display: flex;
     flex-direction: column;
@@ -112,6 +109,12 @@ header {
     font-size: 18px;
 }
 
+.skill {
+    font-weight: 400;
+    font-size: 18px;
+    padding-left: 40px;
+}
+
 .bullet {
     position: absolute;
     margin-left: -20px;
@@ -130,7 +133,7 @@ header {
 
 .school {
     font-size: 20px;
-    font-weight: 400;
+    font-weight: 300;
     margin-bottom: 5px;
 }
 
@@ -142,7 +145,7 @@ header {
 .subheader {
     color: black;
     font-size: 22px;
-    font-weight: 400;
+    font-weight: 300;
 }
 
 .description {
@@ -162,7 +165,7 @@ header {
 .duration {
     color: black;
     font-size: 20px;
-    font-weight: 400;
+    font-weight: 300;
 }
 
 .location {
