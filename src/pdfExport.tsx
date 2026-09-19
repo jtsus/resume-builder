@@ -22,6 +22,7 @@ export function exportToPDF(name: string) {
         if (node.nodeName === "#text") {
             textNodes.push(node)
         } else if (node instanceof Element) {
+            if (node.closest("[data-spell-layer]")) continue
             let style = window.getComputedStyle(node, null)
             let color = style.getPropertyValue("background-color")
             let pos = node.getBoundingClientRect()
