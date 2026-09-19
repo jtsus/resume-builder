@@ -1,20 +1,43 @@
 import React from "react";
 import {SchoolEntry} from "../types";
+import Editable from "./Editable";
+import BulletList from "./BulletList";
 
-const Education = ({content}: { content: SchoolEntry }) => (
-    <div className="education">
-        <div className="spaced-line">
-            <div className="header">{content.school}</div>
-            <div className="location">{content.duration}</div>
-        </div>
-        <div className="spaced-line">
-            <em className="subheader">{content.degree}</em>
-            {content.grade && <em className="duration">{content.grade}</em>}
-        </div>
-        {content.achievements?.map((action, i) =>
-            <div className="achievement" key={i}><div className="bullet" />{action}</div>
-        )}
-    </div>
-)
+const Education = ({content, onChange}: { content: SchoolEntry, onChange: (content: SchoolEntry) => void }) => {
+    const addFirstAchievement = () => {
+        if (!content.achievements || content.achievements.length === 0) {
+            onChange({...content, achievements: [""]})
+        }
+    }
 
-export default Education;
+    return (
+        <div className="education">
+            <div className="spaced-line">
+                <Editable className="header" value={content.school}
+                          onEnter={addFirstAchievement}
+                          onChange={(school) => onChange({...content, school})}/>
+                <Editable className="location" value={content.duration}
+                          onEnter={addFirstAchievement}
+                          onChange={(duration) => onChange({...content, duration})}/>
+            </div>
+            <div className="spaced-line">
+                <Editable tag="em" className="subheader" value={content.degree}
+                          onEnter={addFirstAchievement}
+                          onChange={(degree) => onChange({...content, degree})}/>
+                {content.grade && <Editable tag="em" className="duration" value={content.grade}
+                                            onChange={(grade) => onChange({...content, grade})}/>}
+            </div>
+            {content.achievements &&
+                <BulletList
+                    items={content.achievements}
+                    itemClassName="action"
+                    onChange={(achievements) => onChange({
+                        ...content,
+                        achievements: achievements.length ? achievements : undefined
+                    })}
+                />}
+        </div>
+    )
+}
+
+export default Education
